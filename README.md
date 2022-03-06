@@ -12,6 +12,10 @@ Filters in image processing are just what the name suggests, Filter. They are ty
 Detecting the April Tag in any frame of [Tag1 video](https://drive.google.com/file/d/1EBSii403dwpq7xSvNH2HxUg48nqVUwQ6/view?usp=sharing) (just one frame).
 
 
+
+## Terms:
+1. Thresholding - Segmentation techniques in computer vision to separate the foreground from the background of the image. Basically selecting value T, all pixel intensities less than T = 0, and all pixel values greater than T = 255
+
 References:
 1. [AprilTag with Python](https://pyimagesearch.com/2020/11/02/apriltag-with-python/)
 2. [FFT Edge Detection](https://wish-aks.medium.com/better-edge-detection-and-noise-reduction-in-images-using-fourier-transform-f85ed48b3123)
