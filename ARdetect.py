@@ -45,6 +45,8 @@ def EdgeDetect(frame):
   
 def GetCorners(frame,color=255):
     white_pixels = np.array(np.where(frame == color))
+    if color != 255:
+        white_pixels = np.array(np.where(frame == color))
     arrx = white_pixels[0]
     arry = white_pixels[1]
 
@@ -109,16 +111,21 @@ while True:
         frame = EdgeDetect(frame)
         corners = GetCorners(frame,255)
         original_image = RemoveBG(original_image,corners)
+        kernel = np.ones((10,10), np.uint8)
+        img_erosion = cv2.erode(original_image, kernel, iterations=1)
+        original_image = cv2.dilate(original_image, kernel, iterations=1)
         cv2.imwrite('step1.png',original_image)
+        frame = cv2.cvtColor(original_image, cv2.COLOR_BGR2GRAY)
+        frame = EdgeDetect(frame)
+        cornerAR = GetCorners(frame,0)
         plt.figure(figsize=(10,10))
-        plt.imshow(original_image)
+        plt.imshow(frame)
         plt.show()
-        cornerAR = GetCorners(original_image,0)
-        cv2.polylines(original_image,[corners],True,(0,255,0),3)
+        cv2.polylines(original_image,[cornerAR],True,(0,255,0),3)
         pos_frame = video_.get(cv2.CAP_PROP_POS_FRAMES)
         print(str(pos_frame)+" frames")
-        cv2.imwrite(str(pos_frame)+".png",original_image)
-        break
+        if pos_frame==1:
+            cv2.imwrite("ARTagDetected.png",original_image)
     else:   # wait for next frame        
         video_.set(cv2.cv.CV_CAP_PROP_POS_FRAMES, pos_frame-1)
         cv2.waitKey(1000)
