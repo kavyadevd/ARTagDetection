@@ -42,6 +42,13 @@ python3 CubeAR.py
 ```
 To close the output window at any time press esc
 
+## Results
+After FFT           |  Detect and Decode  
+:-------------------------:|:-------------------------:
+![AfterFFT](https://user-images.githubusercontent.com/13993518/157317242-8d439999-d2d9-43e8-b9e6-4b0ae4ad9741.png) | ![Detected](https://user-images.githubusercontent.com/13993518/157317571-1b670a3a-8e31-4d22-b271-ebbb0520a141.png)
+Superimpose            |  #3D cube Project  
+![Superimposed](https://user-images.githubusercontent.com/13993518/157317597-37d30c47-e447-4ca5-91bf-5652f2d381d9.png)| ![Projection](https://user-images.githubusercontent.com/13993518/157317669-6616c387-9741-4c89-b0e2-63b42da40135.png)
+
 
 ## Part 1 – Detection
 ### AR Code detection:
