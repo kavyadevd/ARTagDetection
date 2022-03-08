@@ -7,11 +7,48 @@ Filters in image processing are just what the name suggests, Filter. They are ty
 </p>
 <p></p>
 
+
+## Executing the code
+
+### File structure
+
+    .
+    ├── ARdetect.py                             # python code file for problem 1.a and 1.b
+    ├── TestudoSuperimpose.py                   # python code file for problem 2.a
+    ├── CubeAR.py                               # python code file for problem 2.b
+    ├── Results                                 # contains output images
+    ├── 1tagvideo.mp4                           # input video file
+    ├── testudo.png                             # image to be superimposed
+    └── README.md
+
+
+### Commands:
+1. For executing AR TAG detect and decode ( Problem 1.a and 1.b.)
+
+```
+python3 Ardetect.py
+```
+
+2. For executing image superimposition ( Problem 2.a )
+
+```
+python3 TestudoSuperimpose.py
+```
+
+3. For executing solution to AR TAG detect and decode ( Problem 2.b )
+
+```
+python3 CubeAR.py
+```
+To close the output window at any time press esc
+
+
 ## Part 1 – Detection
 ### AR Code detection:
 Detecting the April Tag in any frame of [Tag1 video](https://drive.google.com/file/d/1EBSii403dwpq7xSvNH2HxUg48nqVUwQ6/view?usp=sharing) (just one frame).
 
-
+## Part 2 – Tracking
+Track the detected AR Tag and superimpose an image and then a 3D cube while maintaining the orientation
 
 ## Terms:
 1. Thresholding - Segmentation techniques in computer vision to separate the foreground from the background of the image. Basically selecting value T, all pixel intensities less than T = 0, and all pixel values greater than T = 255
